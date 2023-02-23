@@ -16,7 +16,7 @@ namespace Random_Trifecta
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new main());
+            Application.Run(new Main());
         }
     }
 }

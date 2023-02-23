@@ -1,6 +1,6 @@
 ﻿namespace Random_Trifecta
 {
-    partial class main
+    partial class Main
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -29,10 +29,16 @@
         private void InitializeComponent()
         {
             this.list = new System.Windows.Forms.CheckedListBox();
-            this.box1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
+            this.box = new System.Windows.Forms.PictureBox();
+            this.lock1 = new System.Windows.Forms.Label();
+            this.lock2 = new System.Windows.Forms.Label();
+            this.lock3 = new System.Windows.Forms.Label();
+            this.generate = new System.Windows.Forms.Button();
+            this.value = new System.Windows.Forms.NumericUpDown();
+            this.select = new System.Windows.Forms.Button();
+            this.lift = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.box)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.value)).BeginInit();
             this.SuspendLayout();
             // 
             // list
@@ -60,60 +66,150 @@
             "18"});
             this.list.Location = new System.Drawing.Point(12, 12);
             this.list.Name = "list";
-            this.list.Size = new System.Drawing.Size(103, 323);
+            this.list.Size = new System.Drawing.Size(103, 294);
             this.list.TabIndex = 0;
             // 
-            // box1
+            // box
             // 
-            this.box1.Location = new System.Drawing.Point(171, 44);
-            this.box1.Name = "box1";
-            this.box1.Size = new System.Drawing.Size(416, 88);
-            this.box1.TabIndex = 1;
-            this.box1.TabStop = false;
-            this.box1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.box1_MouseDoubleClick);
+            this.box.Location = new System.Drawing.Point(167, 73);
+            this.box.Name = "box";
+            this.box.Size = new System.Drawing.Size(416, 88);
+            this.box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.box.TabIndex = 1;
+            this.box.TabStop = false;
+            this.box.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Box_MouseDoubleClick);
             // 
-            // button1
+            // lock1
             // 
-            this.button1.Location = new System.Drawing.Point(180, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "固定";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lock1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lock1.AutoSize = true;
+            this.lock1.BackColor = System.Drawing.Color.Transparent;
+            this.lock1.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lock1.Location = new System.Drawing.Point(179, 12);
+            this.lock1.Name = "lock1";
+            this.lock1.Size = new System.Drawing.Size(62, 48);
+            this.lock1.TabIndex = 2;
+            this.lock1.Text = "🔒";
+            this.lock1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lock1.Visible = false;
             // 
-            // button2
+            // lock2
             // 
-            this.button2.Location = new System.Drawing.Point(428, 171);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lock2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lock2.AutoSize = true;
+            this.lock2.BackColor = System.Drawing.Color.Transparent;
+            this.lock2.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lock2.Location = new System.Drawing.Point(179, 12);
+            this.lock2.Name = "lock2";
+            this.lock2.Size = new System.Drawing.Size(62, 48);
+            this.lock2.TabIndex = 3;
+            this.lock2.Text = "🔒";
+            this.lock2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lock2.Visible = false;
             // 
-            // main
+            // lock3
+            // 
+            this.lock3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lock3.AutoSize = true;
+            this.lock3.BackColor = System.Drawing.Color.Transparent;
+            this.lock3.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lock3.Location = new System.Drawing.Point(179, 12);
+            this.lock3.Name = "lock3";
+            this.lock3.Size = new System.Drawing.Size(62, 48);
+            this.lock3.TabIndex = 4;
+            this.lock3.Text = "🔒";
+            this.lock3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lock3.Visible = false;
+            // 
+            // generate
+            // 
+            this.generate.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.generate.Location = new System.Drawing.Point(413, 235);
+            this.generate.Name = "generate";
+            this.generate.Size = new System.Drawing.Size(159, 71);
+            this.generate.TabIndex = 5;
+            this.generate.Text = "生成";
+            this.generate.UseVisualStyleBackColor = true;
+            // 
+            // value
+            // 
+            this.value.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.value.Location = new System.Drawing.Point(167, 235);
+            this.value.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.value.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.value.Name = "value";
+            this.value.Size = new System.Drawing.Size(90, 71);
+            this.value.TabIndex = 6;
+            this.value.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            // 
+            // select
+            // 
+            this.select.Location = new System.Drawing.Point(15, 312);
+            this.select.Name = "select";
+            this.select.Size = new System.Drawing.Size(44, 23);
+            this.select.TabIndex = 7;
+            this.select.Text = "選択";
+            this.select.UseVisualStyleBackColor = true;
+            // 
+            // lift
+            // 
+            this.lift.Location = new System.Drawing.Point(65, 312);
+            this.lift.Name = "lift";
+            this.lift.Size = new System.Drawing.Size(44, 23);
+            this.lift.TabIndex = 8;
+            this.lift.Text = "解除";
+            this.lift.UseVisualStyleBackColor = true;
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 349);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.box1);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(627, 343);
+            this.Controls.Add(this.lift);
+            this.Controls.Add(this.select);
+            this.Controls.Add(this.value);
+            this.Controls.Add(this.generate);
+            this.Controls.Add(this.lock3);
+            this.Controls.Add(this.lock2);
+            this.Controls.Add(this.lock1);
+            this.Controls.Add(this.box);
             this.Controls.Add(this.list);
-            this.Name = "main";
+            this.Name = "Main";
             this.ShowIcon = false;
             this.Text = "Random Trifecta";
-            this.Load += new System.EventHandler(this.main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.box1)).EndInit();
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Main_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.value)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.CheckedListBox list;
-        public System.Windows.Forms.PictureBox box1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.PictureBox box;
+        private System.Windows.Forms.Label lock1;
+        private System.Windows.Forms.Label lock2;
+        private System.Windows.Forms.Label lock3;
+        private System.Windows.Forms.Button generate;
+        private System.Windows.Forms.NumericUpDown value;
+        private System.Windows.Forms.Button select;
+        private System.Windows.Forms.Button lift;
     }
 }
 
