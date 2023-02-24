@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -31,6 +32,16 @@ namespace Random_Trifecta
         //初期動作
         private void Main_Load(object sender, EventArgs e)
         {
+            //設定読み込み
+            this.TopMost = Properties.Settings.Default.topmost;
+            if (Properties.Settings.Default.value)
+            {
+                value.Value = Properties.Settings.Default.before_num;
+            }
+            else
+            {
+                value.Value = Properties.Settings.Default.reset_num;
+            }
             ResetPosition();
             LoadValue();
         }
@@ -62,9 +73,9 @@ namespace Random_Trifecta
             this.box.Image = canvas;
 
             //ロックの位置調整
-            lock1.Location = new Point(box.Location.X + 14, lock1.Location.Y);
-            lock2.Location = new Point(box.Location.X + box.Height + interval + 14, lock1.Location.Y);
-            lock3.Location = new Point(box.Location.X + (box.Height + interval) * 2 + 14, lock1.Location.Y);
+            lock1.Location = new Point(box.Location.X + 14, box.Height-75);
+            lock2.Location = new Point(box.Location.X + box.Height + interval + 14, box.Height - 75);
+            lock3.Location = new Point(box.Location.X + (box.Height + interval) * 2 + 14, box.Height - 75);
 
             //ラベルの透明化
             num1.Parent = box;
@@ -99,6 +110,8 @@ namespace Random_Trifecta
         private void value_ValueChanged(object sender, EventArgs e)
         {
             LoadValue();
+            Properties.Settings.Default.before_num = (int)value.Value;
+            Properties.Settings.Default.Save();
         }
 
         private void generate_Click(object sender, EventArgs e)
@@ -717,6 +730,12 @@ namespace Random_Trifecta
             {
                 list.SetItemChecked(i, false);
             }
+        }
+
+        private void setting_button_Click(object sender, EventArgs e)
+        {
+            setting setting = new setting();
+            setting.Show();
         }
     }
 }
