@@ -150,6 +150,7 @@ namespace Random_Trifecta
             this.select.TabIndex = 7;
             this.select.Text = "選択";
             this.select.UseVisualStyleBackColor = true;
+            this.select.Click += new System.EventHandler(this.select_Click);
             // 
             // lift
             // 
@@ -159,6 +160,7 @@ namespace Random_Trifecta
             this.lift.TabIndex = 8;
             this.lift.Text = "解除";
             this.lift.UseVisualStyleBackColor = true;
+            this.lift.Click += new System.EventHandler(this.lift_Click);
             // 
             // num1
             // 
@@ -179,7 +181,7 @@ namespace Random_Trifecta
             this.num2.BackColor = System.Drawing.Color.Transparent;
             this.num2.CausesValidation = false;
             this.num2.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.num2.Location = new System.Drawing.Point(315, 74);
+            this.num2.Location = new System.Drawing.Point(313, 74);
             this.num2.Name = "num2";
             this.num2.Size = new System.Drawing.Size(114, 84);
             this.num2.TabIndex = 10;
@@ -193,7 +195,7 @@ namespace Random_Trifecta
             this.num3.BackColor = System.Drawing.Color.Transparent;
             this.num3.CausesValidation = false;
             this.num3.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.num3.Location = new System.Drawing.Point(473, 74);
+            this.num3.Location = new System.Drawing.Point(471, 74);
             this.num3.Name = "num3";
             this.num3.Size = new System.Drawing.Size(114, 84);
             this.num3.TabIndex = 11;
