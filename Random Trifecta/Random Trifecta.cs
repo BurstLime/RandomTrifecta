@@ -361,6 +361,11 @@ namespace Random_Trifecta
                     num1.Text = list.SelectedItem.ToString();
                     list.Items.Remove(list.SelectedItem);
                 }
+                else
+                {
+                    locked1 = true;
+                    LoadValue();
+                }
                 lock1.Visible = true;
                 locked1 = true;
             }
@@ -387,6 +392,11 @@ namespace Random_Trifecta
                     num2.Text = list.SelectedItem.ToString();
                     list.Items.Remove(list.SelectedItem);
                 }
+                else
+                {
+                    locked2 = true;
+                    LoadValue();
+                }
                 lock2.Visible = true;
                 locked2 = true;
             }
@@ -412,6 +422,11 @@ namespace Random_Trifecta
                 {
                     num3.Text = list.SelectedItem.ToString();
                     list.Items.Remove(list.SelectedItem);
+                }
+                else
+                {
+                    locked3 = true;
+                    LoadValue();
                 }
                 lock3.Visible = true;
                 locked3 = true;
