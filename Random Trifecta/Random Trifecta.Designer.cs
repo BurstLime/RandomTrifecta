@@ -37,6 +37,9 @@
             this.value = new System.Windows.Forms.NumericUpDown();
             this.select = new System.Windows.Forms.Button();
             this.lift = new System.Windows.Forms.Button();
+            this.num1 = new System.Windows.Forms.Label();
+            this.num2 = new System.Windows.Forms.Label();
+            this.num3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.value)).BeginInit();
             this.SuspendLayout();
@@ -45,25 +48,6 @@
             // 
             this.list.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.list.FormattingEnabled = true;
-            this.list.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18"});
             this.list.Location = new System.Drawing.Point(12, 12);
             this.list.Name = "list";
             this.list.Size = new System.Drawing.Size(103, 294);
@@ -130,6 +114,7 @@
             this.generate.TabIndex = 5;
             this.generate.Text = "生成";
             this.generate.UseVisualStyleBackColor = true;
+            this.generate.Click += new System.EventHandler(this.generate_Click);
             // 
             // value
             // 
@@ -153,6 +138,7 @@
             0,
             0,
             0});
+            this.value.ValueChanged += new System.EventHandler(this.value_ValueChanged);
             // 
             // select
             // 
@@ -172,6 +158,48 @@
             this.lift.Text = "解除";
             this.lift.UseVisualStyleBackColor = true;
             // 
+            // num1
+            // 
+            this.num1.BackColor = System.Drawing.Color.Transparent;
+            this.num1.CausesValidation = false;
+            this.num1.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.num1.Location = new System.Drawing.Point(156, 74);
+            this.num1.Name = "num1";
+            this.num1.Size = new System.Drawing.Size(114, 84);
+            this.num1.TabIndex = 9;
+            this.num1.Text = "1";
+            this.num1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.num1.Visible = false;
+            this.num1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.num1_MouseDoubleClick);
+            // 
+            // num2
+            // 
+            this.num2.BackColor = System.Drawing.Color.Transparent;
+            this.num2.CausesValidation = false;
+            this.num2.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.num2.Location = new System.Drawing.Point(315, 74);
+            this.num2.Name = "num2";
+            this.num2.Size = new System.Drawing.Size(114, 84);
+            this.num2.TabIndex = 10;
+            this.num2.Text = "2";
+            this.num2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.num2.Visible = false;
+            this.num2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.num2_MouseDoubleClick);
+            // 
+            // num3
+            // 
+            this.num3.BackColor = System.Drawing.Color.Transparent;
+            this.num3.CausesValidation = false;
+            this.num3.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.num3.Location = new System.Drawing.Point(473, 74);
+            this.num3.Name = "num3";
+            this.num3.Size = new System.Drawing.Size(114, 84);
+            this.num3.TabIndex = 11;
+            this.num3.Text = "3";
+            this.num3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.num3.Visible = false;
+            this.num3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.num3_MouseDoubleClick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -185,8 +213,11 @@
             this.Controls.Add(this.lock3);
             this.Controls.Add(this.lock2);
             this.Controls.Add(this.lock1);
-            this.Controls.Add(this.box);
             this.Controls.Add(this.list);
+            this.Controls.Add(this.num3);
+            this.Controls.Add(this.num2);
+            this.Controls.Add(this.num1);
+            this.Controls.Add(this.box);
             this.Name = "Main";
             this.ShowIcon = false;
             this.Text = "Random Trifecta";
@@ -200,8 +231,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckedListBox list;
         public System.Windows.Forms.PictureBox box;
         private System.Windows.Forms.Label lock1;
         private System.Windows.Forms.Label lock2;
@@ -210,6 +239,10 @@
         private System.Windows.Forms.NumericUpDown value;
         private System.Windows.Forms.Button select;
         private System.Windows.Forms.Button lift;
+        private System.Windows.Forms.Label num1;
+        private System.Windows.Forms.Label num2;
+        private System.Windows.Forms.Label num3;
+        public System.Windows.Forms.CheckedListBox list;
     }
 }
 
