@@ -34,90 +34,10 @@ namespace Random_Trifecta
             LoadValue();
         }
 
-        //ロック（数字が入ってないとき）
-        private void Box_MouseDoubleClick(object sender, MouseEventArgs e)
+        //リストの選択解除
+        private void Main_MouseClick(object sender, MouseEventArgs e)
         {
-            if ((0 <= e.X && e.X <= box.Height - bold )&&( 0 <= e.Y && e.Y <= box.Height - bold)) //1
-            {
-                if (locked1)
-                {
-                    num1.Visible = false;
-                    lock1.Visible = false;
-                    locked1 = false;
-                }
-                else
-                {
-                    if(list.SelectedIndex != -1)
-                    {
-                        num1.Text = list.SelectedItem.ToString();
-                        num1.Visible = true;
-                        lock1.Visible = true;
-                        locked1 = true;
-                    }
-                }
-            }else if ((box.Height + interval <= e.X && e.X <= box.Height*2 + interval) && (0 <= e.Y && e.Y <= box.Height - bold)) //2
-            {
-                if (locked2)
-                {
-                    lock2.Visible = false;
-                    locked2 = false;
-                }
-                else
-                {
-                    lock2.Visible = true;
-                    locked2 = true;
-                }
-            }
-            else if (((box.Height + interval)*2 <= e.X && e.X <= box.Height*3 + interval*2) && (0 <= e.Y && e.Y <= box.Height - bold)) //3
-            {
-                if (locked3)
-                {
-                    lock3.Visible = false;
-                    locked3 = false;
-                }
-                else
-                {
-                    lock3.Visible = true;
-                    locked3 = true;
-                }
-            }
-        }
-        //ロック（数字が入ってるとき）
-        private void num1_MouseDoubleClick(object sender, MouseEventArgs e){
-            if (locked1)
-            {
-                lock1.Visible = false;
-                locked1 = false;
-            }
-            else
-            {
-                lock1.Visible = true;
-                locked1 = true;
-            }
-        }
-        private void num2_MouseDoubleClick(object sender, MouseEventArgs e){
-            if (locked2)
-            {
-                lock2.Visible = false;
-                locked2 = false;
-            }
-            else
-            {
-                lock2.Visible = true;
-                locked2 = true;
-            }
-        }
-        private void num3_MouseDoubleClick(object sender, MouseEventArgs e){
-            if (locked3)
-            {
-                lock3.Visible = false;
-                locked3 = false;
-            }
-            else
-            {
-                lock3.Visible = true;
-                locked3 = true;
-            }
+            list.SelectedIndex = -1;
         }
 
         //初期位置
@@ -160,7 +80,17 @@ namespace Random_Trifecta
             list.Items.Clear();
             for(int i = 1; i < value.Value+1; i++)
             {
-                list.Items.Add(i);
+                if (locked1&&num1.Text==i.ToString())
+                {
+                }else if(locked2 && num2.Text == i.ToString())
+                {
+                }else if (locked3 && num3.Text == i.ToString())
+                {
+                }
+                else
+                {
+                    list.Items.Add(i);
+                }
             }
         }
 
@@ -342,6 +272,150 @@ namespace Random_Trifecta
             }
 
             num1.Visible = true; num2.Visible = true; num3.Visible = true;
+        }
+
+
+
+        //ロック（数字が入ってないとき）
+        private void Box_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if ((0 <= e.X && e.X <= box.Height - bold) && (0 <= e.Y && e.Y <= box.Height - bold)) //1
+            {
+                if (locked1)
+                {
+                    num1.Visible = false;
+                    lock1.Visible = false;
+                    locked1 = false;
+                }
+                else
+                {
+                    if (list.SelectedIndex != -1)
+                    {
+                        num1.Text = list.SelectedItem.ToString();
+                        num1.Visible = true;
+                        lock1.Visible = true;
+                        locked1 = true;
+                        list.Items.Remove(list.SelectedItem);
+                    }
+                }
+            }
+            else if ((box.Height + interval <= e.X && e.X <= box.Height * 2 + interval) && (0 <= e.Y && e.Y <= box.Height - bold)) //2
+            {
+                if (locked2)
+                {
+                    lock2.Visible = false;
+                    locked2 = false;
+                }
+                else
+                {
+                    if (list.SelectedIndex != -1)
+                    {
+                        num2.Text = list.SelectedItem.ToString();
+                        num2.Visible = true;
+                        lock2.Visible = true;
+                        locked2 = true;
+                        list.Items.Remove(list.SelectedItem);
+                    }
+                }
+            }
+            else if (((box.Height + interval) * 2 <= e.X && e.X <= box.Height * 3 + interval * 2) && (0 <= e.Y && e.Y <= box.Height - bold)) //3
+            {
+                if (locked3)
+                {
+                    lock3.Visible = false;
+                    locked3 = false;
+                }
+                else
+                {
+                    if (list.SelectedIndex != -1)
+                    {
+                        num3.Text = list.SelectedItem.ToString();
+                        num3.Visible = true;
+                        lock3.Visible = true;
+                        locked3 = true;
+                        list.Items.Remove(list.SelectedItem);
+                    }
+                }
+            }
+        }
+        //ロック（数字が入ってるとき）
+        private void num1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (locked1)
+            {
+                if (list.SelectedIndex != -1)
+                {
+                    num1.Text = list.SelectedItem.ToString();
+                    list.Items.Remove(list.SelectedItem);
+                    LoadValue();
+                    return;
+                }
+                lock1.Visible = false;
+                locked1 = false;
+                LoadValue();
+            }
+            else
+            {
+                if (list.SelectedIndex != -1)
+                {
+                    num1.Text = list.SelectedItem.ToString();
+                    list.Items.Remove(list.SelectedItem);
+                }
+                lock1.Visible = true;
+                locked1 = true;
+            }
+        }
+        private void num2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (locked2)
+            {
+                if (list.SelectedIndex != -1)
+                {
+                    num2.Text = list.SelectedItem.ToString();
+                    list.Items.Remove(list.SelectedItem);
+                    LoadValue();
+                    return;
+                }
+                lock2.Visible = false;
+                locked2 = false;
+                LoadValue();
+            }
+            else
+            {
+                if (list.SelectedIndex != -1)
+                {
+                    num2.Text = list.SelectedItem.ToString();
+                    list.Items.Remove(list.SelectedItem);
+                }
+                lock2.Visible = true;
+                locked2 = true;
+            }
+        }
+        private void num3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (locked3)
+            {
+                if (list.SelectedIndex != -1)
+                {
+                    num3.Text = list.SelectedItem.ToString();
+                    list.Items.Remove(list.SelectedItem);
+                    LoadValue();
+                    return;
+                }
+                lock3.Visible = false;
+                locked3 = false;
+                LoadValue();
+            }
+            else
+            {
+                if (list.SelectedIndex != -1)
+                {
+                    num3.Text = list.SelectedItem.ToString();
+                    list.Items.Remove(list.SelectedItem);
+                }
+                lock3.Visible = true;
+                locked3 = true;
+            }
         }
     }
 }

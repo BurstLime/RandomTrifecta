@@ -1,4 +1,6 @@
-﻿namespace Random_Trifecta
+﻿using System.Windows.Forms;
+
+namespace Random_Trifecta
 {
     partial class Main
     {
@@ -58,7 +60,7 @@
             this.box.Location = new System.Drawing.Point(167, 73);
             this.box.Name = "box";
             this.box.Size = new System.Drawing.Size(416, 88);
-            this.box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.box.TabIndex = 1;
             this.box.TabStop = false;
             this.box.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Box_MouseDoubleClick);
@@ -223,6 +225,7 @@
             this.Text = "Random Trifecta";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Main_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Main_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.value)).EndInit();
             this.ResumeLayout(false);
