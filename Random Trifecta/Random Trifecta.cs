@@ -107,7 +107,15 @@ namespace Random_Trifecta
             System.Random r = new System.Random();
             List<string> num_list = new List<string>();
             num_list.Clear();
-            
+
+            //ロックシステム
+            int locked_num = 0;
+            if (locked1) { locked_num++; }
+            if (locked2) { locked_num++; }
+            if (locked3) { locked_num++; }
+            if (locked_num == 3) { return; }
+
+
             if (list.CheckedItems.Count == 0) //全部チェックされていないとき
             {
                 inx1 = r.Next(list.Items.Count);
@@ -166,6 +174,146 @@ namespace Random_Trifecta
                 List<string> no_checked = new List<string>();
                 if(list.CheckedItems.Count == 1)
                 {
+                    //ロック
+                    if(locked_num == 2)
+                    {
+                        if (!locked1) { num1.Text = list.CheckedItems[0].ToString();}
+                        else if (!locked2) { num2.Text = list.CheckedItems[0].ToString(); }
+                        else if (!locked3) { num3.Text = list.CheckedItems[0].ToString(); }
+                        return;
+                    }
+                    else if(locked_num == 1) //1
+                    {
+                        if (locked1) 
+                        {
+                            int before_checked_l1 = list.CheckedIndices[0]; //ここ
+                            num_list.Add(num1.Text.ToString()); //ここ
+                            num_list.Add(list.CheckedItems[0].ToString());
+
+                            for (int i = 0; i < list.Items.Count; i++)
+                            {
+                                list.SetItemChecked(i, true);
+                            }
+                            for (int i = 0; i < list.CheckedItems.Count; i++)
+                            {
+                                no_checked.Add(list.CheckedItems[i].ToString());
+                            }
+                            for (int i = 0; i < list.Items.Count; i++)
+                            {
+                                list.SetItemChecked(i, false);
+                            }
+                            no_checked.Remove(num_list[1].ToString()); //ここ
+                            list.SetItemChecked(before_checked_l1, true);
+
+                            inx2 = r.Next(no_checked.Count);
+                            while (inx2 == (int)list.CheckedItems[0])
+                            {
+                                inx2 = r.Next(no_checked.Count);
+                            }
+                            num_list.Add(no_checked[inx2].ToString());
+                            inx1 = 0;
+                            inx2 = r.Next(num_list.Count);
+                            while (inx1 == inx2)
+                            {
+                                inx2 = r.Next(num_list.Count);
+                            }
+                            inx3 = r.Next(num_list.Count);
+                            while (inx1 == inx3 || inx2 == inx3)
+                            {
+                                inx3 = r.Next(num_list.Count);
+                            }
+                        }
+                        else if (locked2) 
+                        {
+                            int before_checked_l2 = list.CheckedIndices[0]; //ここ
+                            num_list.Add(num2.Text.ToString()); //ここ
+                            num_list.Add(list.CheckedItems[0].ToString());
+
+                            for (int i = 0; i < list.Items.Count; i++)
+                            {
+                                list.SetItemChecked(i, true);
+                            }
+                            for (int i = 0; i < list.CheckedItems.Count; i++)
+                            {
+                                no_checked.Add(list.CheckedItems[i].ToString());
+                            }
+                            for (int i = 0; i < list.Items.Count; i++)
+                            {
+                                list.SetItemChecked(i, false);
+                            }
+                            no_checked.Remove(num_list[1].ToString()); //ここ
+                            list.SetItemChecked(before_checked_l2, true);
+
+                            inx2 = r.Next(no_checked.Count);
+                            while (inx2 == (int)list.CheckedItems[0])
+                            {
+                                inx2 = r.Next(no_checked.Count);
+                            }
+                            num_list.Add(no_checked[inx2].ToString());
+                            inx2 = 0;
+                            inx1 = r.Next(num_list.Count);
+                            while (inx1 == inx2)
+                            {
+                                inx1 = r.Next(num_list.Count);
+                            }
+                            inx3 = r.Next(num_list.Count);
+                            while (inx1 == inx3 || inx2 == inx3)
+                            {
+                                inx3 = r.Next(num_list.Count);
+                            }
+                        }
+                        else if (locked3) 
+                        {
+                            int before_checked_l3 = list.CheckedIndices[0]; //ここ
+                            num_list.Add(num3.Text.ToString()); //ここ
+                            num_list.Add(list.CheckedItems[0].ToString());
+
+                            for (int i = 0; i < list.Items.Count; i++)
+                            {
+                                list.SetItemChecked(i, true);
+                            }
+                            for (int i = 0; i < list.CheckedItems.Count; i++)
+                            {
+                                no_checked.Add(list.CheckedItems[i].ToString());
+                            }
+                            for (int i = 0; i < list.Items.Count; i++)
+                            {
+                                list.SetItemChecked(i, false);
+                            }
+                            no_checked.Remove(num_list[1].ToString()); //ここ
+                            list.SetItemChecked(before_checked_l3, true);
+
+                            inx2 = r.Next(no_checked.Count);
+                            while (inx2 == (int)list.CheckedItems[0])
+                            {
+                                inx2 = r.Next(no_checked.Count);
+                            }
+                            num_list.Add(no_checked[inx2].ToString());
+                            inx3 = 0;
+                            inx1 = r.Next(num_list.Count);
+                            while (inx3 == inx1)
+                            {
+                                inx1 = r.Next(num_list.Count);
+                            }
+                            inx2 = r.Next(num_list.Count);
+                            while (inx2 == inx3 || inx2 == inx1)
+                            {
+                                inx2 = r.Next(num_list.Count);
+                            }
+                        }
+                        else
+                        {
+                            inx1 = 0;
+                            inx2 = 0;
+                            inx3 = 0;
+                        }
+
+                        num1.Text = num_list[inx1].ToString();
+                        num2.Text = num_list[inx2].ToString();
+                        num3.Text = num_list[inx3].ToString();
+                        return;
+                    }
+
                     int before_checked = list.CheckedIndices[0];
                     num_list.Add(list.CheckedItems[0].ToString());
 
@@ -259,12 +407,18 @@ namespace Random_Trifecta
                 inx3 = 0;
             }
 
-            if(list.CheckedItems.Count == 0|| list.CheckedItems.Count == 1 || list.CheckedItems.Count == 2)
+            if (list.CheckedItems.Count == 0)
+            {
+                if (!locked1) { num1.Text = num_list[inx1].ToString(); }
+                if (!locked2) { num2.Text = num_list[inx2].ToString(); }
+                if (!locked3) { num3.Text = num_list[inx3].ToString(); }
+            }else if (list.CheckedItems.Count == 1 || list.CheckedItems.Count == 2)
             {
                 num1.Text = num_list[inx1].ToString();
                 num2.Text = num_list[inx2].ToString();
                 num3.Text = num_list[inx3].ToString();
-            }else if(list.CheckedItems.Count == list.Items.Count || 3 <= list.CheckedItems.Count)
+            }
+            else if(list.CheckedItems.Count == list.Items.Count || 3 <= list.CheckedItems.Count)
             {
                 num1.Text = list.CheckedItems[inx1].ToString();
                 num2.Text = list.CheckedItems[inx2].ToString();
