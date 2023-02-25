@@ -6,6 +6,8 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -74,9 +76,9 @@ namespace Random_Trifecta
             this.box.Image = canvas;
 
             //ロックの位置調整
-            lock1.Location = new Point(box.Location.X + 14, box.Height-75);
-            lock2.Location = new Point(box.Location.X + box.Height + interval + 14, box.Height - 75);
-            lock3.Location = new Point(box.Location.X + (box.Height + interval) * 2 + 14, box.Height - 75);
+            lock1.Location = new Point(box.Location.X + 14, box.Height-65);
+            lock2.Location = new Point(box.Location.X + box.Height + interval + 14, box.Height - 65);
+            lock3.Location = new Point(box.Location.X + (box.Height + interval) * 2 + 14, box.Height - 65);
 
             //ラベルの透明化
             num1.Parent = box;

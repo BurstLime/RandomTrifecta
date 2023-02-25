@@ -45,6 +45,7 @@ namespace Random_Trifecta
             this.list = new System.Windows.Forms.CheckedListBox();
             this.memo = new System.Windows.Forms.Button();
             this.memo_button = new System.Windows.Forms.Button();
+            this.memo_img = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.value)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +53,7 @@ namespace Random_Trifecta
             // box
             // 
             this.box.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.box.Location = new System.Drawing.Point(167, 73);
+            this.box.Location = new System.Drawing.Point(167, 91);
             this.box.Name = "box";
             this.box.Size = new System.Drawing.Size(416, 88);
             this.box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,7 +170,7 @@ namespace Random_Trifecta
             this.num1.BackColor = System.Drawing.Color.Transparent;
             this.num1.CausesValidation = false;
             this.num1.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.num1.Location = new System.Drawing.Point(156, 74);
+            this.num1.Location = new System.Drawing.Point(156, 92);
             this.num1.Name = "num1";
             this.num1.Size = new System.Drawing.Size(114, 84);
             this.num1.TabIndex = 9;
@@ -183,7 +184,7 @@ namespace Random_Trifecta
             this.num2.BackColor = System.Drawing.Color.Transparent;
             this.num2.CausesValidation = false;
             this.num2.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.num2.Location = new System.Drawing.Point(313, 74);
+            this.num2.Location = new System.Drawing.Point(313, 92);
             this.num2.Name = "num2";
             this.num2.Size = new System.Drawing.Size(114, 84);
             this.num2.TabIndex = 10;
@@ -197,7 +198,7 @@ namespace Random_Trifecta
             this.num3.BackColor = System.Drawing.Color.Transparent;
             this.num3.CausesValidation = false;
             this.num3.Font = new System.Drawing.Font("MS UI Gothic", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.num3.Location = new System.Drawing.Point(471, 74);
+            this.num3.Location = new System.Drawing.Point(471, 92);
             this.num3.Name = "num3";
             this.num3.Size = new System.Drawing.Size(114, 84);
             this.num3.TabIndex = 11;
@@ -248,13 +249,25 @@ namespace Random_Trifecta
             this.memo_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.memo_button.AutoSize = true;
             this.memo_button.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.memo_button.Location = new System.Drawing.Point(327, 272);
+            this.memo_button.Location = new System.Drawing.Point(309, 272);
             this.memo_button.Name = "memo_button";
             this.memo_button.Size = new System.Drawing.Size(74, 34);
             this.memo_button.TabIndex = 14;
             this.memo_button.Text = "記録";
+            this.memo_button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.memo_button.UseVisualStyleBackColor = true;
             this.memo_button.Click += new System.EventHandler(this.memo_button_Click);
+            // 
+            // memo_img
+            // 
+            this.memo_img.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.memo_img.AutoSize = true;
+            this.memo_img.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.memo_img.Location = new System.Drawing.Point(302, 218);
+            this.memo_img.Name = "memo_img";
+            this.memo_img.Size = new System.Drawing.Size(91, 64);
+            this.memo_img.TabIndex = 15;
+            this.memo_img.Text = "✍";
             // 
             // Main
             // 
@@ -263,6 +276,7 @@ namespace Random_Trifecta
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(627, 343);
             this.Controls.Add(this.memo_button);
+            this.Controls.Add(this.memo_img);
             this.Controls.Add(this.setting_button);
             this.Controls.Add(this.memo);
             this.Controls.Add(this.list);
@@ -307,6 +321,7 @@ namespace Random_Trifecta
         public CheckedListBox list;
         private Button memo;
         private Button memo_button;
+        private Label memo_img;
     }
 }
 
