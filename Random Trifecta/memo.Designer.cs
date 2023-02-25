@@ -87,6 +87,7 @@
             this.ShowIcon = false;
             this.Text = "記録";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.memo_FormClosing);
+            this.Load += new System.EventHandler(this.memo_Load);
             this.ResumeLayout(false);
 
         }

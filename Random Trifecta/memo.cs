@@ -45,5 +45,12 @@ namespace Random_Trifecta
                 memo_list.Items.Clear();
             }
         }
+
+        private void memo_Load(object sender, EventArgs e)
+        {
+            this.TopMost = Properties.Settings.Default.topmost_memo;
+            this.MaximumSize = new Size(192, 680);
+            this.MinimumSize = new Size(192, 0);
+        }
     }
 }

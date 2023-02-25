@@ -1,16 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Random_Trifecta
@@ -47,6 +37,7 @@ namespace Random_Trifecta
             }
             ResetPosition();
             LoadValue();
+            this.MaximumSize = new Size(800,680);
         }
 
         //リストの選択解除
@@ -169,6 +160,9 @@ namespace Random_Trifecta
                     num1.Text = list.Items[0].ToString();
                 }
                 return;
+            }else if(value.Value == 3 && locked_num == 1 && list.CheckedItems.Count == 0)
+            {
+                list.SetItemChecked(0, true);
             }
 
             //ロックパターン
@@ -190,6 +184,7 @@ namespace Random_Trifecta
                     }
                     num2.Text = num_list[inx1].ToString();
                     num3.Text = num_list[inx2].ToString();
+                    if (value.Value == 3 && locked_num == 1){list.SetItemChecked(0, false);}
                     return;
                 }
                 else if(list.CheckedItems.Count == 2) //チェック2
@@ -269,6 +264,7 @@ namespace Random_Trifecta
                     }
                     num1.Text = num_list[inx1].ToString();
                     num3.Text = num_list[inx2].ToString();
+                    if (value.Value == 3 && locked_num == 1) { list.SetItemChecked(0, false); }
                     return;
                 }
                 else if (list.CheckedItems.Count == 2) //チェック2
@@ -332,6 +328,7 @@ namespace Random_Trifecta
                     }
                     num1.Text = num_list[inx1].ToString();
                     num2.Text = num_list[inx2].ToString();
+                    if (value.Value == 3 && locked_num == 1) { list.SetItemChecked(0, false); }
                     return;
                 }
                 else if (list.CheckedItems.Count == 2) //チェック2
@@ -387,8 +384,8 @@ namespace Random_Trifecta
                 {
                     list.SetItemChecked(i, false);
                 }
-
-            }else if (list.CheckedItems.Count == list.Items.Count) //全部チェックされているとき
+            }
+            else if (list.CheckedItems.Count == list.Items.Count) //全部チェックされているとき
             {
                 inx1 = r.Next(list.CheckedItems.Count);
                 inx2 = r.Next(list.CheckedItems.Count);
@@ -534,7 +531,6 @@ namespace Random_Trifecta
                 num2.Text = list.CheckedItems[inx2].ToString();
                 num3.Text = list.CheckedItems[inx3].ToString();
             }
-
             num1.Visible = true; num2.Visible = true; num3.Visible = true;
         }
 

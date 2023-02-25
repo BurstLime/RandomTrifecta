@@ -30,6 +30,15 @@ namespace Random_Trifecta
                 Top.Checked = false;
             }
 
+            if (Properties.Settings.Default.topmost_memo)
+            {
+                Top_memo.Checked = true;
+            }
+            else
+            {
+                Top_memo.Checked = false;
+            }
+
             if (Properties.Settings.Default.value)
             {
                 value_save.Checked = true;
@@ -64,6 +73,15 @@ namespace Random_Trifecta
             else
             {
                 Properties.Settings.Default.topmost = false;
+            }
+
+            if (Top_memo.Checked)
+            {
+                Properties.Settings.Default.topmost_memo = true;
+            }
+            else
+            {
+                Properties.Settings.Default.topmost_memo = false;
             }
 
             if (value_save.Checked)

@@ -70,5 +70,17 @@ namespace Random_Trifecta.Properties {
                 this["before_num"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool topmost_memo {
+            get {
+                return ((bool)(this["topmost_memo"]));
+            }
+            set {
+                this["topmost_memo"] = value;
+            }
+        }
     }
 }

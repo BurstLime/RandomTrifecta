@@ -14,5 +14,8 @@
     <Setting Name="before_num" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">18</Value>
     </Setting>
+    <Setting Name="topmost_memo" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

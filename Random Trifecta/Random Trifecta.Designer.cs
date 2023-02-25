@@ -34,8 +34,6 @@ namespace Random_Trifecta
             this.lock1 = new System.Windows.Forms.Label();
             this.lock2 = new System.Windows.Forms.Label();
             this.lock3 = new System.Windows.Forms.Label();
-            this.generate = new System.Windows.Forms.Button();
-            this.value = new System.Windows.Forms.NumericUpDown();
             this.select = new System.Windows.Forms.Button();
             this.lift = new System.Windows.Forms.Button();
             this.num1 = new System.Windows.Forms.Label();
@@ -44,8 +42,10 @@ namespace Random_Trifecta
             this.setting_button = new System.Windows.Forms.Button();
             this.list = new System.Windows.Forms.CheckedListBox();
             this.memo = new System.Windows.Forms.Button();
-            this.memo_button = new System.Windows.Forms.Button();
+            this.generate = new System.Windows.Forms.Button();
+            this.value = new System.Windows.Forms.NumericUpDown();
             this.memo_img = new System.Windows.Forms.Label();
+            this.memo_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.value)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +67,7 @@ namespace Random_Trifecta
             this.lock1.AutoSize = true;
             this.lock1.BackColor = System.Drawing.Color.Transparent;
             this.lock1.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lock1.Location = new System.Drawing.Point(179, 12);
+            this.lock1.Location = new System.Drawing.Point(180, 25);
             this.lock1.Name = "lock1";
             this.lock1.Size = new System.Drawing.Size(62, 48);
             this.lock1.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace Random_Trifecta
             this.lock2.AutoSize = true;
             this.lock2.BackColor = System.Drawing.Color.Transparent;
             this.lock2.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lock2.Location = new System.Drawing.Point(179, 12);
+            this.lock2.Location = new System.Drawing.Point(180, 25);
             this.lock2.Name = "lock2";
             this.lock2.Size = new System.Drawing.Size(62, 48);
             this.lock2.TabIndex = 3;
@@ -95,52 +95,13 @@ namespace Random_Trifecta
             this.lock3.AutoSize = true;
             this.lock3.BackColor = System.Drawing.Color.Transparent;
             this.lock3.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lock3.Location = new System.Drawing.Point(179, 12);
+            this.lock3.Location = new System.Drawing.Point(180, 25);
             this.lock3.Name = "lock3";
             this.lock3.Size = new System.Drawing.Size(62, 48);
             this.lock3.TabIndex = 4;
             this.lock3.Text = "🔒";
             this.lock3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lock3.Visible = false;
-            // 
-            // generate
-            // 
-            this.generate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.generate.AutoSize = true;
-            this.generate.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.generate.Location = new System.Drawing.Point(413, 235);
-            this.generate.Name = "generate";
-            this.generate.Size = new System.Drawing.Size(159, 71);
-            this.generate.TabIndex = 5;
-            this.generate.Text = "生成";
-            this.generate.UseVisualStyleBackColor = true;
-            this.generate.Click += new System.EventHandler(this.generate_Click);
-            // 
-            // value
-            // 
-            this.value.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.value.AutoSize = true;
-            this.value.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.value.Location = new System.Drawing.Point(167, 235);
-            this.value.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.value.Minimum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.value.Name = "value";
-            this.value.Size = new System.Drawing.Size(107, 71);
-            this.value.TabIndex = 6;
-            this.value.Value = new decimal(new int[] {
-            18,
-            0,
-            0,
-            0});
-            this.value.ValueChanged += new System.EventHandler(this.value_ValueChanged);
             // 
             // select
             // 
@@ -244,6 +205,56 @@ namespace Random_Trifecta
             this.memo.UseVisualStyleBackColor = true;
             this.memo.Click += new System.EventHandler(this.Memo_Click);
             // 
+            // generate
+            // 
+            this.generate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.generate.AutoSize = true;
+            this.generate.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.generate.Location = new System.Drawing.Point(413, 235);
+            this.generate.Name = "generate";
+            this.generate.Size = new System.Drawing.Size(159, 71);
+            this.generate.TabIndex = 5;
+            this.generate.Text = "生成";
+            this.generate.UseVisualStyleBackColor = true;
+            this.generate.Click += new System.EventHandler(this.generate_Click);
+            // 
+            // value
+            // 
+            this.value.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.value.AutoSize = true;
+            this.value.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.value.Location = new System.Drawing.Point(167, 235);
+            this.value.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.value.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.value.Name = "value";
+            this.value.Size = new System.Drawing.Size(107, 71);
+            this.value.TabIndex = 6;
+            this.value.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            0});
+            this.value.ValueChanged += new System.EventHandler(this.value_ValueChanged);
+            // 
+            // memo_img
+            // 
+            this.memo_img.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.memo_img.AutoSize = true;
+            this.memo_img.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.memo_img.Location = new System.Drawing.Point(302, 218);
+            this.memo_img.Name = "memo_img";
+            this.memo_img.Size = new System.Drawing.Size(91, 64);
+            this.memo_img.TabIndex = 15;
+            this.memo_img.Text = "✍";
+            // 
             // memo_button
             // 
             this.memo_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -257,17 +268,6 @@ namespace Random_Trifecta
             this.memo_button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.memo_button.UseVisualStyleBackColor = true;
             this.memo_button.Click += new System.EventHandler(this.memo_button_Click);
-            // 
-            // memo_img
-            // 
-            this.memo_img.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.memo_img.AutoSize = true;
-            this.memo_img.Font = new System.Drawing.Font("MS UI Gothic", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.memo_img.Location = new System.Drawing.Point(302, 218);
-            this.memo_img.Name = "memo_img";
-            this.memo_img.Size = new System.Drawing.Size(91, 64);
-            this.memo_img.TabIndex = 15;
-            this.memo_img.Text = "✍";
             // 
             // Main
             // 
@@ -310,8 +310,6 @@ namespace Random_Trifecta
         private System.Windows.Forms.Label lock1;
         private System.Windows.Forms.Label lock2;
         private System.Windows.Forms.Label lock3;
-        private System.Windows.Forms.Button generate;
-        private System.Windows.Forms.NumericUpDown value;
         private System.Windows.Forms.Button select;
         private System.Windows.Forms.Button lift;
         private System.Windows.Forms.Label num1;
@@ -320,8 +318,10 @@ namespace Random_Trifecta
         private Button setting_button;
         public CheckedListBox list;
         private Button memo;
-        private Button memo_button;
+        private Button generate;
+        private NumericUpDown value;
         private Label memo_img;
+        private Button memo_button;
     }
 }
 
