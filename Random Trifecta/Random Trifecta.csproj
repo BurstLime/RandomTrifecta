@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="memo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memo.Designer.cs">
+      <DependentUpon>memo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Random Trifecta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="setting.Designer.cs">
       <DependentUpon>setting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="memo.resx">
+      <DependentUpon>memo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Random Trifecta.resx">
       <DependentUpon>Random Trifecta.cs</DependentUpon>
     </EmbeddedResource>

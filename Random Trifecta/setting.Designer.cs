@@ -155,7 +155,9 @@
             this.Controls.Add(this.value_save);
             this.Controls.Add(this.Top);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(248, 312);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(248, 312);
             this.Name = "setting";
             this.ShowIcon = false;
             this.Text = "設定";

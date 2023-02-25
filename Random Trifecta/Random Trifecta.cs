@@ -19,6 +19,7 @@ namespace Random_Trifecta
         Boolean locked1 = false;
         Boolean locked2 = false;
         Boolean locked3 = false;
+        memo Memo = new memo();
 
         //設定
         int interval = 70;
@@ -116,6 +117,7 @@ namespace Random_Trifecta
 
         private void generate_Click(object sender, EventArgs e)
         {
+            list.SelectedIndex = -1;
             num1.Visible = true;
             num2.Visible = true;
             num3.Visible = true;
@@ -735,7 +737,33 @@ namespace Random_Trifecta
         private void setting_button_Click(object sender, EventArgs e)
         {
             setting setting = new setting();
-            setting.Show();
+            setting.ShowDialog();
+        }
+
+        private void Memo_Click(object sender, EventArgs e)
+        {
+            Memo.Show();
+        }
+
+        private void memo_button_Click(object sender, EventArgs e)
+        {
+            if(num1.Text.Length!=0 && num2.Text.Length != 0 && num3.Text.Length != 0)
+            {
+                string num1_m;
+                string num2_m;
+                string num3_m;
+
+                if (num1.Text.Length == 1){num1_m = "0"+num1.Text;}
+                else{num1_m = num1.Text;}
+
+                if (num2.Text.Length == 1) { num2_m = "0" + num2.Text; }
+                else { num2_m = num2.Text; }
+
+                if (num3.Text.Length == 1) { num3_m = "0" + num3.Text; }
+                else { num3_m = num3.Text; }
+
+                Memo.memo_list.Items.Add(num1_m + "-" + num2_m + "-" + num3_m);
+            }
         }
     }
 }
