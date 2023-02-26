@@ -35,7 +35,9 @@
             // 
             // memo_list
             // 
-            this.memo_list.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.memo_list.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memo_list.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.memo_list.FormattingEnabled = true;
             this.memo_list.ItemHeight = 37;
@@ -47,8 +49,7 @@
             // 
             // remove
             // 
-            this.remove.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.remove.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.remove.Location = new System.Drawing.Point(12, 276);
             this.remove.Name = "remove";
             this.remove.Size = new System.Drawing.Size(72, 29);
@@ -59,8 +60,7 @@
             // 
             // reset
             // 
-            this.reset.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reset.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.reset.ForeColor = System.Drawing.Color.Red;
             this.reset.Location = new System.Drawing.Point(92, 276);
             this.reset.Name = "reset";
@@ -79,7 +79,6 @@
             this.Controls.Add(this.remove);
             this.Controls.Add(this.memo_list);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(192, 351);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(192, 351);
             this.Name = "memo";

@@ -49,7 +49,7 @@ namespace Random_Trifecta
         private void memo_Load(object sender, EventArgs e)
         {
             this.TopMost = Properties.Settings.Default.topmost_memo;
-            this.MaximumSize = new Size(192, 680);
+            this.MaximumSize = new Size(0, 0);
             this.MinimumSize = new Size(192, 0);
         }
     }
