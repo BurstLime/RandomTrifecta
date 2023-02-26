@@ -148,9 +148,9 @@
             this.Top_memo.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Top_memo.Location = new System.Drawing.Point(17, 83);
             this.Top_memo.Name = "Top_memo";
-            this.Top_memo.Size = new System.Drawing.Size(240, 20);
+            this.Top_memo.Size = new System.Drawing.Size(249, 20);
             this.Top_memo.TabIndex = 8;
-            this.Top_memo.Text = "常にウィンドウを手前に表示（メモ）";
+            this.Top_memo.Text = "常にウィンドウを手前に表示（記録）";
             this.Top_memo.UseVisualStyleBackColor = true;
             // 
             // setting

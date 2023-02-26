@@ -37,7 +37,6 @@ namespace Random_Trifecta
             }
             ResetPosition();
             LoadValue();
-            this.MaximumSize = new Size(800,680);
         }
 
         //リストの選択解除

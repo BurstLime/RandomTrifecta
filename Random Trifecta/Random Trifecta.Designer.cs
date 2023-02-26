@@ -289,7 +289,6 @@ namespace Random_Trifecta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(627, 343);
             this.Controls.Add(this.reset_button);
             this.Controls.Add(this.memo_button);
@@ -309,7 +308,7 @@ namespace Random_Trifecta
             this.Controls.Add(this.num1);
             this.Controls.Add(this.box);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(643, 39);
+            this.MinimumSize = new System.Drawing.Size(643, 390);
             this.Name = "Main";
             this.Text = "Random Trifecta";
             this.TransparencyKey = System.Drawing.Color.Silver;
