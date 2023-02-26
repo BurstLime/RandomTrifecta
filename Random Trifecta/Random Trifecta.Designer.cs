@@ -30,6 +30,7 @@ namespace Random_Trifecta
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.box = new System.Windows.Forms.PictureBox();
             this.lock1 = new System.Windows.Forms.Label();
             this.lock2 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@ namespace Random_Trifecta
             this.value = new System.Windows.Forms.NumericUpDown();
             this.memo_img = new System.Windows.Forms.Label();
             this.memo_button = new System.Windows.Forms.Button();
+            this.reset_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.value)).BeginInit();
             this.SuspendLayout();
@@ -269,12 +271,27 @@ namespace Random_Trifecta
             this.memo_button.UseVisualStyleBackColor = true;
             this.memo_button.Click += new System.EventHandler(this.memo_button_Click);
             // 
+            // reset_button
+            // 
+            this.reset_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.reset_button.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.reset_button.ForeColor = System.Drawing.Color.Red;
+            this.reset_button.Location = new System.Drawing.Point(587, 305);
+            this.reset_button.Name = "reset_button";
+            this.reset_button.Size = new System.Drawing.Size(43, 49);
+            this.reset_button.TabIndex = 16;
+            this.reset_button.Text = "↻";
+            this.reset_button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.reset_button.UseVisualStyleBackColor = true;
+            this.reset_button.Click += new System.EventHandler(this.reset_button_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(627, 343);
+            this.Controls.Add(this.reset_button);
             this.Controls.Add(this.memo_button);
             this.Controls.Add(this.memo_img);
             this.Controls.Add(this.setting_button);
@@ -291,9 +308,9 @@ namespace Random_Trifecta
             this.Controls.Add(this.num2);
             this.Controls.Add(this.num1);
             this.Controls.Add(this.box);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(643, 39);
             this.Name = "Main";
-            this.ShowIcon = false;
             this.Text = "Random Trifecta";
             this.TransparencyKey = System.Drawing.Color.Silver;
             this.Load += new System.EventHandler(this.Main_Load);
@@ -322,6 +339,7 @@ namespace Random_Trifecta
         private NumericUpDown value;
         private Label memo_img;
         private Button memo_button;
+        private Button reset_button;
     }
 }
 

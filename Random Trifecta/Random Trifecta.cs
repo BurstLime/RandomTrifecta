@@ -763,5 +763,27 @@ namespace Random_Trifecta
                 Memo.memo_list.Items.Add(num1_m + "-" + num2_m + "-" + num3_m);
             }
         }
+
+        private void reset_button_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("本当にリセットしますか？", "確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                lock1.Visible = false;
+                locked1 = false;
+                lock2.Visible = false;
+                locked2 = false;
+                lock3.Visible = false;
+                locked3 = false;
+                num1.Text = "";
+                num2.Text = "";
+                num3.Text = "";
+                LoadValue();
+
+                if (Properties.Settings.Default.value == false)
+                {
+                    value.Value = Properties.Settings.Default.reset_num;
+                }
+            }
+        }
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Random Trifecta", "Random Trifecta\Random Trifecta.csproj", "{363D30A6-8673-4F39-B5FD-C1779FE71B4F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Random Trifecta Installer", "Random Trifecta Installer\Random Trifecta Installer.vdproj", "{EB356593-B81F-4412-9FEE-AA551A720E0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{363D30A6-8673-4F39-B5FD-C1779FE71B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{363D30A6-8673-4F39-B5FD-C1779FE71B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{363D30A6-8673-4F39-B5FD-C1779FE71B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB356593-B81F-4412-9FEE-AA551A720E0E}.Debug|Any CPU.ActiveCfg = Debug
+		{EB356593-B81F-4412-9FEE-AA551A720E0E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
