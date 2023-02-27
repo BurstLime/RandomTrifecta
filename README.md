@@ -7,7 +7,7 @@
 ![ss2](https://user-images.githubusercontent.com/37976348/221583758-6a309f57-d89a-4f8a-bc38-9f77b5ca2dd1.png)
 
 ### ①
-乱数の結果が表示されます。
+乱数の結果が表示されるボックスです。
 
 ### ②
 乱数の範囲を設定することができます。<br>
