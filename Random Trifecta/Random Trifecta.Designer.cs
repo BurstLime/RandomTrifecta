@@ -276,7 +276,7 @@ namespace Random_Trifecta
             this.reset_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.reset_button.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.reset_button.ForeColor = System.Drawing.Color.Red;
-            this.reset_button.Location = new System.Drawing.Point(587, 305);
+            this.reset_button.Location = new System.Drawing.Point(589, 313);
             this.reset_button.Name = "reset_button";
             this.reset_button.Size = new System.Drawing.Size(43, 49);
             this.reset_button.TabIndex = 16;
@@ -289,7 +289,7 @@ namespace Random_Trifecta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 343);
+            this.ClientSize = new System.Drawing.Size(627, 351);
             this.Controls.Add(this.reset_button);
             this.Controls.Add(this.memo_button);
             this.Controls.Add(this.memo_img);
