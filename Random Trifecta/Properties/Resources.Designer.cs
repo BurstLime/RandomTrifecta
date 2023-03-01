@@ -63,9 +63,9 @@ namespace Random_Trifecta.Properties {
         /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
-        public static System.Drawing.Icon icon {
+        public static System.Drawing.Icon main_app {
             get {
-                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                object obj = ResourceManager.GetObject("main_app", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
