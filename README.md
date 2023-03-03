@@ -3,6 +3,13 @@
 高度な条件下で乱数を3つ生成します。<br>
 乱数は99まで指定することができるので競馬以外の用途でも使用できます。
 
+## 動作環境
+### 正常動作確認済み
+Windows 10
+### 一部UIに問題あり（動作は問題なし）
+Windows 8<br>
+Windows 7
+
 ## 使い方
 ![ss2](https://user-images.githubusercontent.com/37976348/221583758-6a309f57-d89a-4f8a-bc38-9f77b5ca2dd1.png)
 
